@@ -11,7 +11,6 @@ using namespace std;
 
 class TowerHanoi
 {
-    const unsigned int MAX_DISC_CRT = 11;
     LStack<string> rod[4];
 
     public:

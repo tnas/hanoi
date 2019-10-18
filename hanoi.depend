@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1571341949 source:d:\myprojects\hanoi\src\towerhanoi.cpp
+1571416511 source:d:\myprojects\hanoi\src\towerhanoi.cpp
 	"TowerHanoi.h"
 
-1571341337 d:\myprojects\hanoi\include\towerhanoi.h
+1571409303 d:\myprojects\hanoi\include\towerhanoi.h
 	"../LStack.h"
 	<iostream>
 	<string>
@@ -14,13 +14,13 @@
 	<cstdlib>
 	"TowerHanoi.h"
 
-1571344409 d:\myprojects\hanoi\lstack.h
+1571414627 d:\myprojects\hanoi\lstack.h
 	<iostream>
 	<sstream>
 	<string>
 	"Node.h"
 
-1571340083 d:\myprojects\hanoi\include\node.h
+1571408738 d:\myprojects\hanoi\include\node.h
 
 1571405144 source:/home/thiago/projects/hanoi/src/TowerHanoi.cpp
 	"TowerHanoi.h"

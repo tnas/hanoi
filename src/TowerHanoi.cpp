@@ -1,5 +1,8 @@
 #include "TowerHanoi.h"
 
+const unsigned int MAX_DISC_CRT = 11;
+const string EMPTY_DISC = string("           ");
+
 TowerHanoi::TowerHanoi(int numberOfDiscs)
 {
     this->numberOfDiscs = numberOfDiscs;
@@ -57,9 +60,14 @@ TowerHanoi::~TowerHanoi()
 
 void TowerHanoi::move(int from, int to)
 {
-    if (this->rod[from].isEmpty())
+
+    if (from == to)
     {
-        cout << "There is no disks at the rod " << from << endl;
+        cout << "Invalid movement: from/to rods cannot be equals." << endl;
+    }
+    else if (this->rod[from].isEmpty())
+    {
+        cout << "There are no disks in the rod " << from << endl;
     }
     else if (this->rod[to].isEmpty())
     {
@@ -82,31 +90,31 @@ void TowerHanoi::move(int from, int to)
         {
             string disc = this->rod[from].pop();
             this->rod[to].push(disc);
-            this->rod[to].setNodeSize(toSizeDisc);
+            this->rod[to].setNodeSize(fromSizeDisc);
         }
     }
 }
 
 bool TowerHanoi::checkWin()
 {
-    return true;
+    return this->rod[3].getStackSize() == this->numberOfDiscs;
 }
 
 ostream& operator<<(ostream& os, TowerHanoi& tower)
 {
-    string disc = nullptr;
+    string disc = "";
 
     for (int level = tower.numberOfDiscs; level > 0 ; --level)
     {
         for (int n = 1; n <= 3; ++n)
         {
             disc = tower.rod[n].getNodeAt(level);
-            if (!disc.empty()) os << disc;
+            os << (disc.empty() ? EMPTY_DISC : disc);
         }
 
         os << endl;
     }
 
-    return os << "---------------------------------" << endl
-              << "      1          2          3    " << endl;
+    return os << "-------------------------------------" << endl
+              << "      1           2           3      " << endl;
 }

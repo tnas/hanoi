@@ -22,6 +22,7 @@ class LStack {
         T getNodeAt(int position);
         void setNodeSize(int size);
         int getNodeSize();
+        int getStackSize();
         string toString();
 };
 
@@ -57,6 +58,7 @@ void LStack<T>::push(const T data)
         element->previous = top;
         top->next = element;
         top = element;
+        top->next = nullptr;
     }
 
     ++stackSize;
@@ -75,6 +77,7 @@ T LStack<T>::pop()
         T data = top->data;
         delete(top);
         top = underTop;
+        if (top != nullptr) top->next = nullptr;
         --stackSize;
         return data;
     }
@@ -128,6 +131,12 @@ int LStack<T>::getNodeSize()
     }
 
     return -1;
+}
+
+template <class T>
+int LStack<T>::getStackSize()
+{
+    return stackSize;
 }
 
 template <class T>
