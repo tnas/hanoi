@@ -12,9 +12,7 @@ using namespace std;
 class TowerHanoi
 {
     const unsigned int MAX_DISC_CRT = 11;
-    LStack<string> leftRod;
-    LStack<string> centerRod;
-    LStack<string> rightRod;
+    LStack<string> rod[4];
 
     public:
         TowerHanoi(int numberOfDiscs);

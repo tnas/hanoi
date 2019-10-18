@@ -18,6 +18,8 @@ class LStack {
         void push (const T data);
         T pop();
         bool isEmpty();
+        void setNodeSize(int size);
+        int getNodeSize();
         string toString();
 };
 
@@ -76,6 +78,26 @@ template <class T>
 bool LStack<T>::isEmpty()
 {
     return top == nullptr;
+}
+
+template <class T>
+void LStack<T>::setNodeSize(int size)
+{
+    if (top != nullptr)
+    {
+        top->size = size;
+    }
+}
+
+template <class T>
+int LStack<T>::getNodeSize()
+{
+    if (top != nullptr)
+    {
+        return top->size;
+    }
+
+    return -1;
 }
 
 template <class T>

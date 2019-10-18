@@ -8,6 +8,7 @@ public :
     T data;
     Node<T>* next;
     Node<T>* previous;
+    int size;
 
     Node(T data);
 };

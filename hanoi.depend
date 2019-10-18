@@ -22,3 +22,26 @@
 
 1571340083 d:\myprojects\hanoi\include\node.h
 
+1571399886 source:/home/thiago/projects/hanoi/src/TowerHanoi.cpp
+	"TowerHanoi.h"
+
+1571398864 /home/thiago/projects/hanoi/include/TowerHanoi.h
+	"../LStack.h"
+	<iostream>
+	<string>
+	<sstream>
+	<vector>
+
+1571399314 /home/thiago/projects/hanoi/LStack.h
+	<iostream>
+	<sstream>
+	<string>
+	"Node.h"
+
+1571397545 /home/thiago/projects/hanoi/include/Node.h
+
+1571396953 source:/home/thiago/projects/hanoi/TowerHanoiDemo.cpp
+	<iostream>
+	<cstdlib>
+	"TowerHanoi.h"
+
