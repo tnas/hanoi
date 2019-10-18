@@ -94,9 +94,19 @@ bool TowerHanoi::checkWin()
 
 ostream& operator<<(ostream& os, TowerHanoi& tower)
 {
-    return os << tower.rod[1].toString()
-              //<< tower.rod[2].toString()
-              //<< tower.rod[3].toString()
-              << "---------------------------------" << endl
+    string disc = nullptr;
+
+    for (int level = tower.numberOfDiscs; level > 0 ; --level)
+    {
+        for (int n = 1; n <= 3; ++n)
+        {
+            disc = tower.rod[n].getNodeAt(level);
+            if (!disc.empty()) os << disc;
+        }
+
+        os << endl;
+    }
+
+    return os << "---------------------------------" << endl
               << "      1          2          3    " << endl;
 }

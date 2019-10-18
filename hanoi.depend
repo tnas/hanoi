@@ -22,7 +22,7 @@
 
 1571340083 d:\myprojects\hanoi\include\node.h
 
-1571399886 source:/home/thiago/projects/hanoi/src/TowerHanoi.cpp
+1571405144 source:/home/thiago/projects/hanoi/src/TowerHanoi.cpp
 	"TowerHanoi.h"
 
 1571398864 /home/thiago/projects/hanoi/include/TowerHanoi.h
@@ -32,7 +32,7 @@
 	<sstream>
 	<vector>
 
-1571399314 /home/thiago/projects/hanoi/LStack.h
+1571405108 /home/thiago/projects/hanoi/LStack.h
 	<iostream>
 	<sstream>
 	<string>

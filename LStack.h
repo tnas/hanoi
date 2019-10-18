@@ -11,6 +11,7 @@ using namespace std;
 template <class T>
 class LStack {
     Node<T>* top;
+    int stackSize;
 
     public :
         LStack();
@@ -18,6 +19,7 @@ class LStack {
         void push (const T data);
         T pop();
         bool isEmpty();
+        T getNodeAt(int position);
         void setNodeSize(int size);
         int getNodeSize();
         string toString();
@@ -27,6 +29,7 @@ template <class T>
 LStack<T>::LStack()
 {
     top = nullptr;
+    stackSize = 0;
 }
 
 template <class T>
@@ -55,6 +58,8 @@ void LStack<T>::push(const T data)
         top->next = element;
         top = element;
     }
+
+    ++stackSize;
 }
 
 template <class T>
@@ -70,6 +75,7 @@ T LStack<T>::pop()
         T data = top->data;
         delete(top);
         top = underTop;
+        --stackSize;
         return data;
     }
 }
@@ -78,6 +84,30 @@ template <class T>
 bool LStack<T>::isEmpty()
 {
     return top == nullptr;
+}
+
+template <class T>
+T LStack<T>::getNodeAt(int position)
+{
+    if (top == nullptr || position > stackSize || position < 1) return "";
+    int level = stackSize;
+
+    if (position == level)
+    {
+        return top->data;
+    }
+    else
+    {
+        Node<T>* underTop = top;
+
+        do
+        {
+            underTop = underTop->previous;
+            --level;
+        } while (level != position);
+
+        return underTop->data;
+    }
 }
 
 template <class T>
